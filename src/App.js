@@ -12,7 +12,6 @@ async function mostrardatos(
   anio2022, setAnio2022,
   anio2023, setAnio2023,
   anio2024, setAnio2024,
-  resp1, setresp1
 
 ) {
   let dato;
@@ -30,19 +29,6 @@ async function mostrardatos(
       setAnio2023(resp.data[5].Total)
       setAnio2024(resp.data[6].Total)
 
-      /*
-      for (let i = 0; i < resp.data.listlogin.length; i++) {
-        let info = resp.data.listlogin[i].email;
-
-        if (info === email) {
-          console.log(info);
-          dato = resp.data.tempPass;
-          localStorage.setItem("tempPass", JSON.stringify(dato));
-
-          break;
-        }
-      }
-      */
     })
     .catch(function (error) {
       if (error.response) {
@@ -66,7 +52,7 @@ function App() {
   const [anio2022, setAnio2022] = useState(0);
   const [anio2023, setAnio2023] = useState(0);
   const [anio2024, setAnio2024] = useState(0);
-  const [resp1, setresp1] = useState("");
+
 
   
 
@@ -80,7 +66,7 @@ function App() {
       anio2022, setAnio2022,
       anio2023, setAnio2023,
       anio2024, setAnio2024,
-      resp1, setresp1
+
     );
 
   }, []);
@@ -117,7 +103,7 @@ function App() {
 
   return (
     <div style={{backgroundColor: "lightblue"}}>
-      {resp1}
+
 			<CanvasJSChart options = {options} />
 
     </div>
